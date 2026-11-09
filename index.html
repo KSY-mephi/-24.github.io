@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitrix24 — управляйте бизнесом в одном месте</title>
+  <meta name="description" content="CRM, задачи и командные коммуникации в едином рабочем пространстве. Запросите бесплатную демонстрацию.">
+
+  <!-- ============================================================
+       1) ЯНДЕКС МЕТРИКА — замените YANDEX_METRICA_ID на номер счётчика
+          (только цифры, например 12345678)
+       ============================================================ -->
+  <script>
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t), a=e.getElementsByTagName(t)[0];
+      k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(YANDEX_METRICA_ID, "init", {
+      clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YANDEX_METRICA_ID" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+
+  <!-- ============================================================
+       2) GOOGLE ANALYTICS 4 — замените G-XXXXXXXXXX на ваш ID
+          (например G-1AB2CD34EF)
+       ============================================================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{
+      --navy:#0e3a78;
+      --navy-deep:#0b2f66;
+      --blue:#2fc7f7;
+      --blue-dark:#2066b0;
+      --green:#7ec242;
+      --ink:#12294a;
+      --muted:#46586f;
+      --bg-light:#f4f7fb;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+    img{max-width:100%}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;
+      background-color:var(--navy);
+      background-image:
+        radial-gradient(1100px 620px at 82% -8%, rgba(47,199,247,.34), transparent 62%),
+        radial-gradient(760px 520px at 6% 108%, rgba(126,194,66,.20), transparent 60%),
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size:auto,auto,68px 68px,68px 68px;
+    }
+    .nav{max-width:1180px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.02em;color:#fff;text-decoration:none}
+    .logo-dot{width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(126,194,66,.22)}
+    .logo-accent{color:var(--blue)}
+    .menu{display:flex;align-items:center;gap:28px}
+    .menu a{font-size:15px;font-weight:500;color:#d7e6f9;text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent;transition:color .25s,border-color .25s}
+    .menu a:hover{color:#fff;border-bottom-color:var(--blue)}
+    .hero-inner{max-width:900px;margin:0 auto;padding:64px 24px 40px;text-align:center}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:9px 20px;border-radius:999px;background:rgba(47,199,247,.16);border:1px solid rgba(47,199,247,.55);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a9ecff}
+    .badge-mark{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 2.4s ease-in-out infinite}
+    h1{margin:26px 0 0;font-size:clamp(2.25rem,6vw,4.5rem);line-height:1.06;letter-spacing:-.03em;font-weight:800}
+    .hero-sub{margin:22px auto 0;max-width:62ch;font-size:clamp(1rem,1.6vw,1.2rem);color:#d7e6f9}
+    .cta-wrap{margin-top:34px}
+    .btn{display:inline-block;padding:16px 34px;border:none;border-radius:14px;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;transition:background-color .25s,transform .25s,box-shadow .25s}
+    .btn-hero{background:var(--blue);color:#0b2f66;box-shadow:0 14px 34px rgba(47,199,247,.32)}
+    .btn-hero:hover{background:#fff;color:#14406e;transform:translateY(-3px);box-shadow:0 20px 40px rgba(11,47,102,.4)}
+    .shot{max-width:940px;margin:26px auto 0;padding:0 24px}
+    .shot-frame{border-radius:20px 20px 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.24);border-bottom:none;box-shadow:0 -10px 60px rgba(4,20,48,.45);background:var(--navy-deep)}
+    .shot-frame img{display:block;width:100%;height:clamp(220px,40vw,440px);object-fit:cover;object-position:center 30%}
+    .fade{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+    .fade--2{animation-delay:.12s}.fade--3{animation-delay:.24s}.fade--4{animation-delay:.4s}
+    @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(47,199,247,.5)}50%{box-shadow:0 0 0 7px rgba(47,199,247,0)}}
+
+    /* ---------- PROBLEMS ---------- */
+    .problems{background:var(--bg-light);padding:clamp(64px,9vw,110px) 24px}
+    .inner{max-width:1180px;margin:0 auto}
+    h2{margin:0;font-size:clamp(1.75rem,3.6vw,2.75rem);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:var(--ink)}
+    .underline{width:74px;height:6px;border-radius:3px;margin-top:18px;background:linear-gradient(90deg,var(--blue),var(--green))}
+    .grid{margin-top:clamp(38px,5vw,58px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+    .card{background:#fff;border:1px solid #e2e9f2;border-radius:20px;padding:34px 30px 32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 30px rgba(18,41,74,.06);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(18,41,74,.12)}
+    .card-icon{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex:none}
+    .card-icon svg{width:32px;height:32px;display:block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+    .card:hover .card-icon svg{transform:scale(1.1)}
+    .card--leads .card-icon{background:#e4f6fd}
+    .card--tasks .card-icon{background:#e8eefc}
+    .card--chat  .card-icon{background:#eef7e4}
+    .card--leads:hover .card-icon{background:var(--blue)}
+    .card--tasks:hover .card-icon{background:var(--blue-dark)}
+    .card--chat:hover  .card-icon{background:var(--green)}
+    .card h3{margin:0;font-size:1.3rem;line-height:1.3;letter-spacing:-.01em;color:var(--ink)}
+    .card p{margin:0;color:var(--muted);font-size:1rem}
+    .mark{margin-top:auto;padding-top:6px;display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .mark::before{content:"";width:22px;height:3px;border-radius:2px}
+    .card--leads .mark{color:#17719c}.card--leads .mark::before{background:var(--blue)}
+    .card--tasks .mark{color:var(--blue-dark)}.card--tasks .mark::before{background:var(--blue-dark)}
+    .card--chat  .mark{color:#4f8520}.card--chat  .mark::before{background:var(--green)}
+    .card.is-prep{opacity:0;transform:translateY(28px)}
+    .card.is-in{opacity:1;transform:translateY(0);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+
+    /* ---------- FORM ---------- */
+    .demo{position:relative;overflow:hidden;color:#fff;background-color:#14406e;
+      background-image:radial-gradient(900px 520px at 12% 0%,rgba(47,199,247,.3),transparent 60%),radial-gradient(700px 480px at 96% 100%,rgba(126,194,66,.18),transparent 62%);
+      padding:clamp(64px,9vw,110px) 24px}
+    .demo-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,60px);align-items:center}
+    .demo h2{color:#fff}
+    .demo-lead{margin:18px 0 0;max-width:46ch;font-size:clamp(1rem,1.5vw,1.15rem);color:#cfe4fb}
+    .demo-note{margin:26px 0 0;display:flex;align-items:center;gap:12px;font-size:14px;color:#a9ecff}
+    .demo-note::before{content:"";width:34px;height:3px;border-radius:2px;background:var(--green);flex:none}
+    .demo-shot{margin-top:30px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:0 24px 60px rgba(4,20,48,.42)}
+    .demo-shot img{display:block;width:100%;height:clamp(180px,24vw,260px);object-fit:cover}
+    .form-card{background:#fff;border-radius:24px;padding:clamp(26px,3.4vw,42px);box-shadow:0 30px 70px rgba(4,20,48,.4);color:var(--ink)}
+    .form-card h3{margin:0 0 6px;font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+    .form-card .sub{margin:0 0 24px;font-size:.95rem;color:var(--muted)}
+    .field{margin-bottom:16px}
+    .field label{display:block;margin-bottom:7px;font-size:13.5px;font-weight:600;color:#2c3e55}
+    .field input{width:100%;height:52px;padding:0 16px;border:1.5px solid #d5dfe9;border-radius:12px;background:#fbfdff;font:inherit;font-size:16px;color:var(--ink);transition:border-color .2s,box-shadow .2s,background-color .2s}
+    .field input::placeholder{color:#6a7b8f}
+    .field input:hover{border-color:#b6c6d8}
+    .field input:focus{outline:none;background:#fff;border-color:var(--blue-dark);box-shadow:0 0 0 4px rgba(47,199,247,.28)}
+    .btn-submit{width:100%;margin-top:6px;background:var(--blue-dark);color:#fff;justify-content:center}
+    .btn-submit:hover{background:#174f92;transform:translateY(-2px);box-shadow:0 14px 30px rgba(32,102,176,.35)}
+    .privacy{margin:14px 0 0;font-size:12.5px;color:#66788e;text-align:center}
+    .success{display:none;margin-bottom:16px;padding:16px 18px;border-radius:14px;background:#eef7e4;border:1px solid #c4e0a3;font-size:15px;color:#38641a}
+    .error-msg{margin-bottom:14px;padding:12px 14px;border-radius:12px;background:#fdecec;border:1px solid #f3c4c4;font-size:14px;color:#a52121;display:none}
+
+    @media (max-width:960px){.demo-inner{grid-template-columns:1fr}}
+    @media (max-width:800px){.menu{display:none}.hero-inner{padding:40px 20px 32px}.shot{padding:0 16px}}
+    @media (max-width:640px){.problems,.demo{padding:56px 18px}.form-card{border-radius:18px}.shot-frame{border-radius:14px 14px 0 0}}
+    @media (prefers-reduced-motion:reduce){.fade{animation:none}.badge-mark{animation:none}.card,.btn,.field input{transition:none}.card:hover,.btn:hover{transform:none}}
+  </style>
+</head>
+<body>
+
+<!-- ============ ШАПКА И ОБЛОЖКА ============ -->
+<header class="hero">
+  <nav class="nav" aria-label="Основная навигация">
+    <a class="logo" href="#top"><span class="logo-dot"></span>Bitrix<span class="logo-accent">24</span></a>
+    <div class="menu">
+      <a href="#problems">Проблемы</a>
+      <a href="#demo">Демонстрация</a>
+      <a href="#demo">Связаться</a>
+    </div>
+  </nav>
+  <div class="hero-inner" id="top">
+    <p class="badge fade"><span class="badge-mark"></span>CRM • Задачи • Команда</p>
+    <h1 class="fade fade--2">Управляйте бизнесом в одном месте</h1>
+    <p class="hero-sub fade fade--3">Объедините клиентов, продажи, задачи и коммуникации в едином рабочем пространстве.</p>
+    <p class="cta-wrap fade fade--4"><a class="btn btn-hero" href="#demo" data-cta="hero">Попробовать бесплатно</a></p>
+  </div>
+  <div class="shot fade fade--4">
+    <div class="shot-frame">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda9e38f2c?auto=format&fit=crop&w=1400&q=80" alt="Рабочее пространство CRM: дашборд с показателями продаж на экране ноутбука" loading="eager">
+    </div>
+  </div>
+</header>
+
+<!-- ============ ПРОБЛЕМЫ И РЕШЕНИЯ ============ -->
+<section class="problems" id="problems">
+  <div class="inner">
+    <h2>Проблемы, которые решает Bitrix24</h2>
+    <div class="underline"></div>
+    <div class="grid">
+      <article class="card card--leads">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2066b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Потеря клиентов</h3>
+        <p>Единая база контактов и сделок помогает контролировать обращения.</p>
+        <span class="mark">CRM и воронка продаж</span>
+      </article>
+      <article class="card card--tasks">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2066b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Несистемная работа команды</h3>
+        <p>Задачи и сроки позволяют распределять обязанности и отслеживать выполнение.</p>
+        <span class="mark">Задачи и проекты</span>
+      </article>
+      <article class="card card--chat">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4f8520" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Разрозненные коммуникации</h3>
+        <p>Рабочие инструменты помогают объединить взаимодействие сотрудников.</p>
+        <span class="mark">Чат и сотрудничество</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФОРМА ДЕМОНСТРАЦИИ ============ -->
+<section class="demo" id="demo">
+  <div class="demo-inner">
+    <div>
+      <h2>Хотите узнать больше о возможностях Bitrix24?</h2>
+      <p class="demo-lead">Оставьте заявку на демонстрацию продукта.</p>
+      <p class="demo-note">Покажем CRM, задачи и коммуникации на ваших реальных сценариях</p>
+      <div class="demo-shot">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Команда обсуждает рабочие задачи за общим столом в офисе" loading="lazy">
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Запросить демонстрацию</h3>
+      <p class="sub">Заполните три поля — мы свяжемся с вами и подберём удобное время.</p>
+
+      <div class="success" id="successBox">Спасибо! Заявка отправлена — мы свяжемся с вами в ближайшее время.</div>
+      <div class="error-msg" id="errorBox">Не удалось отправить заявку. Проверьте поля и попробуйте ещё раз.</div>
+
+      <!-- ============================================================
+           3) FORMSPREE — замените ФОРМСПРИ_ХЕШ на ваш URL формы,
+              например https://formspree.io/f/abcdwxyz
+           ============================================================ -->
+      <form id="demo-form" action="https://formspree.io/f/ФОРМСПРИ_ХЕШ" method="POST" novalidate>
+        <div class="field">
+          <label for="f-name">Имя</label>
+          <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Электронная почта</label>
+          <input id="f-email" name="email" type="email" placeholder="name@company.ru" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-company">Компания</label>
+          <input id="f-company" name="company" type="text" placeholder="Название компании" autocomplete="organization">
+        </div>
+        <button type="submit" class="btn btn-submit">Запросить демонстрацию</button>
+        <p class="privacy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ---------- Плавное появление карточек ---------- */
+(function () {
+  var cards = document.querySelectorAll('.card');
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return;
+  cards.forEach(function (card, i) {
+    card.classList.add('is-prep');
+    card.style.transitionDelay = (i * 90) + 'ms';
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach(function (card) { io.observe(card); });
+})();
+
+/* ---------- Клик по CTA-кнопке — цель для обеих систем ---------- */
+document.querySelector('.btn-hero').addEventListener('click', function () {
+  if (typeof ym === 'function') ym(YANDEX_METRICA_ID, 'reachGoal', 'cta_click');
+  if (typeof gtag === 'function') gtag('event', 'cta_click');
+});
+
+/* ---------- Отправка формы: Formspree + цели ---------- */
+(function () {
+  var form = document.getElementById('demo-form');
+  var success = document.getElementById('successBox');
+  var errorBox = document.getElementById('errorBox');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var name = form.elements.name, email = form.elements.email;
+    if (!name.value.trim()) { name.focus(); return; }
+    if (!email.value.trim() || email.value.indexOf('@') < 1) { email.focus(); return; }
+
+    var button = form.querySelector('.btn-submit');
+    button.disabled = true;
+    button.textContent = 'Отправляем…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (!response.ok) throw new Error('form error');
+      success.style.display = 'block';
+      errorBox.style.display = 'none';
+      form.reset();
+
+      /* Яндекс Метрика: цель form_sent */
+      if (typeof ym === 'function') ym(YANDEX_METRICA_ID, 'reachGoal', 'form_sent');
+
+      /* GA4: событие form_sent (конверсия) */
+      if (typeof gtag === 'function') gtag('event', 'form_sent', { form_id: 'demo' });
+    })
+    .catch(function () {
+      errorBox.style.display = 'block';
+    })
+    .finally(function () {
+      button.disabled = false;
+      button.textContent = 'Запросить демонстрацию';
+    });
+  });
+})();
+</script>
+</body>
+</html>

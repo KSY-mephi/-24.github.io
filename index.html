@@ -7,8 +7,7 @@
   <meta name="description" content="CRM, задачи и командные коммуникации в едином рабочем пространстве. Запросите бесплатную демонстрацию.">
 
   <!-- ============================================================
-       1) ЯНДЕКС МЕТРИКА — замените YANDEX_METRICA_ID на номер счётчика
-          (только цифры, например 12345678)
+       1) ЯНДЕКС МЕТРИКА — счётчик 114154117
        ============================================================ -->
   <script>
     (function(m,e,t,r,i,k,a){
@@ -17,22 +16,21 @@
       k=e.createElement(t), a=e.getElementsByTagName(t)[0];
       k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(YANDEX_METRICA_ID, "init", {
+    ym(114154117, "init", {
       clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true
     });
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/YANDEX_METRICA_ID" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <noscript><div><img src="https://mc.yandex.ru/watch/114154117" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 
   <!-- ============================================================
-       2) GOOGLE ANALYTICS 4 — замените G-XXXXXXXXXX на ваш ID
-          (например G-1AB2CD34EF)
+       2) GOOGLE ANALYTICS 4 — G-8XR9G0WXNJ
        ============================================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XR9G0WXNJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-8XR9G0WXNJ');
   </script>
 
   <style>
@@ -69,7 +67,7 @@
     .menu{display:flex;align-items:center;gap:28px}
     .menu a{font-size:15px;font-weight:500;color:#d7e6f9;text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent;transition:color .25s,border-color .25s}
     .menu a:hover{color:#fff;border-bottom-color:var(--blue)}
-    .hero-inner{max-width:900px;margin:0 auto;padding:64px 24px 40px;text-align:center}
+    .hero-inner{max-width:900px;margin:0 auto;padding:64px 24px 56px;text-align:center}
     .badge{display:inline-flex;align-items:center;gap:10px;padding:9px 20px;border-radius:999px;background:rgba(47,199,247,.16);border:1px solid rgba(47,199,247,.55);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a9ecff}
     .badge-mark{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 2.4s ease-in-out infinite}
     h1{margin:26px 0 0;font-size:clamp(2.25rem,6vw,4.5rem);line-height:1.06;letter-spacing:-.03em;font-weight:800}
@@ -78,9 +76,6 @@
     .btn{display:inline-block;padding:16px 34px;border:none;border-radius:14px;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;transition:background-color .25s,transform .25s,box-shadow .25s}
     .btn-hero{background:var(--blue);color:#0b2f66;box-shadow:0 14px 34px rgba(47,199,247,.32)}
     .btn-hero:hover{background:#fff;color:#14406e;transform:translateY(-3px);box-shadow:0 20px 40px rgba(11,47,102,.4)}
-    .shot{max-width:940px;margin:26px auto 0;padding:0 24px}
-    .shot-frame{border-radius:20px 20px 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.24);border-bottom:none;box-shadow:0 -10px 60px rgba(4,20,48,.45);background:var(--navy-deep)}
-    .shot-frame img{display:block;width:100%;height:clamp(220px,40vw,440px);object-fit:cover;object-position:center 30%}
     .fade{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
     .fade--2{animation-delay:.12s}.fade--3{animation-delay:.24s}.fade--4{animation-delay:.4s}
     @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
@@ -140,14 +135,14 @@
     .error-msg{margin-bottom:14px;padding:12px 14px;border-radius:12px;background:#fdecec;border:1px solid #f3c4c4;font-size:14px;color:#a52121;display:none}
 
     @media (max-width:960px){.demo-inner{grid-template-columns:1fr}}
-    @media (max-width:800px){.menu{display:none}.hero-inner{padding:40px 20px 32px}.shot{padding:0 16px}}
-    @media (max-width:640px){.problems,.demo{padding:56px 18px}.form-card{border-radius:18px}.shot-frame{border-radius:14px 14px 0 0}}
+    @media (max-width:800px){.menu{display:none}.hero-inner{padding:40px 20px 44px}}
+    @media (max-width:640px){.problems,.demo{padding:56px 18px}.form-card{border-radius:18px}}
     @media (prefers-reduced-motion:reduce){.fade{animation:none}.badge-mark{animation:none}.card,.btn,.field input{transition:none}.card:hover,.btn:hover{transform:none}}
   </style>
 </head>
 <body>
 
-<!-- ============ ШАПКА И ОБЛОЖКА ============ -->
+<!-- ============ ШАПКА И ОБЛОЖКА (без фото) ============ -->
 <header class="hero">
   <nav class="nav" aria-label="Основная навигация">
     <a class="logo" href="#top"><span class="logo-dot"></span>Bitrix<span class="logo-accent">24</span></a>
@@ -163,7 +158,6 @@
     <p class="hero-sub fade fade--3">Объедините клиентов, продажи, задачи и коммуникации в едином рабочем пространстве.</p>
     <p class="cta-wrap fade fade--4"><a class="btn btn-hero" href="#demo" data-cta="hero">Попробовать бесплатно</a></p>
   </div>
-
 </header>
 
 <!-- ============ ПРОБЛЕМЫ И РЕШЕНИЯ ============ -->
@@ -219,10 +213,9 @@
       <div class="error-msg" id="errorBox">Не удалось отправить заявку. Проверьте поля и попробуйте ещё раз.</div>
 
       <!-- ============================================================
-           3) FORMSPREE — замените ФОРМСПРИ_ХЕШ на ваш URL формы,
-              например https://formspree.io/f/abcdwxyz
+           3) FORMSPREE — форма подключена: xaeernqp
            ============================================================ -->
-      <form id="demo-form" action="https://formspree.io/f/ФОРМСПРИ_ХЕШ" method="POST" novalidate>
+      <form id="demo-form" action="https://formspree.io/f/xaeernqp" method="POST" novalidate>
         <div class="field">
           <label for="f-name">Имя</label>
           <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name" required>
@@ -262,7 +255,7 @@
 
 /* ---------- Клик по CTA-кнопке — цель для обеих систем ---------- */
 document.querySelector('.btn-hero').addEventListener('click', function () {
-  if (typeof ym === 'function') ym(YANDEX_METRICA_ID, 'reachGoal', 'cta_click');
+  if (typeof ym === 'function') ym(114154117, 'reachGoal', 'cta_click');
   if (typeof gtag === 'function') gtag('event', 'cta_click');
 });
 
@@ -295,7 +288,7 @@ document.querySelector('.btn-hero').addEventListener('click', function () {
       form.reset();
 
       /* Яндекс Метрика: цель form_sent */
-      if (typeof ym === 'function') ym(YANDEX_METRICA_ID, 'reachGoal', 'form_sent');
+      if (typeof ym === 'function') ym(114154117, 'reachGoal', 'form_sent');
 
       /* GA4: событие form_sent (конверсия) */
       if (typeof gtag === 'function') gtag('event', 'form_sent', { form_id: 'demo' });
